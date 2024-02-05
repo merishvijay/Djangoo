@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add
+{% endblock %}
+{% block content %}
+<center>
+<h3 class="mt-4">Add Book Details-User defined</h3>
+<form method="POST">
+    {% csrf_token %}
+<div class="mb-3">
+  <label  class="form-label">Number</label>
+  <input type="number" class="form-control"  name="n" placeholder="Enter the number">
+</div>
+
+<div class="mb-3">
+
+  <input type="submit" class="form-control">
+</div>
+    </form>
+{% if fact %}
+    <h4>Factorial is {{fact}}</h4>
+    {% endif %}
+    </center>
+
+{% endblock %}
+

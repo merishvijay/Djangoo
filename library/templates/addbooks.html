@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add
+{% endblock %}
+{% block content %}
+<center>
+<h3 class="mt-4">Add Book Details-User defined</h3>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+<div class="mb-3">
+  <label  class="form-label">TITLE</label>
+  <input type="text" class="form-control"  name="t" placeholder="Enter the title">
+</div>
+<div class="mb-3">
+  <label  class="form-label">AUTHOR</label>
+  <input type="text" class="form-control" name="a" placeholder="Enter the author">
+</div>
+<div class="mb-3">
+  <label  class="form-label">PRICE</label>
+  <input type="text" class="form-control" name="p" placeholder="Enter the price">
+</div>
+
+<div class="mb-3">
+  <label  class="form-label">PDF</label>
+  <input type="file" class="form-control" name="f" placeholder="Choose a file">
+</div>
+<div class="mb-3">
+  <label  class="form-label">COVER</label>
+  <input type="file" class="form-control" name="i" placeholder="Choose a file">
+</div>
+<div class="mb-3">
+
+  <input type="submit" class="form-control">
+</div>
+    </form>
+    </center>
+
+{% endblock %}
+

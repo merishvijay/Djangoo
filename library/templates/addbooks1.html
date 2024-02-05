@@ -1,0 +1,19 @@
+
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add
+{% endblock %}
+{% block content %}
+<center>
+<h3 class="mt-4">Add Book Details-Built in</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+    {{form}}
+        <input type="submit">
+</form>
+{% endblock %}
+

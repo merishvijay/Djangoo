@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<h3 class="mt-4">Book detail</h3></center>
+{% if b %}
+<table class="table table-bordered">
+    <tr>
+         <th>ID</th>
+        <th>TITLE</th>
+        <th>AUTHOR</th>
+        <th>PRICE</th>
+        <th>PDF</th>
+        <th>COVER</th>
+         <th>VIEW</th>
+         <th>EDIT</th>
+         <th>DELETE</th>
+    </tr>
+    {% for i in b %}
+     <tr>
+         <td>{{i.id}}</td>
+        <td>{{i.title}}</td>
+         <td>{{i.author}}</td>
+         <td>{{i.price}}</td>
+         <td><a href="{{i.pdf.url}}">Download</a></td>
+         <td><img src="{{i.cover.url}}"height="100px" , width="100px"</td>
+         <td><a href="{% url 'books:bookdetail' i.id %}" class="btn btn-danger">View</a></td>
+         <td><a href="{% url 'books:bookedit' i.id %}" class="btn btn-danger">Edit</a></td>
+         <td><a href="{% url 'books:bookdelete' i.id %}" class="btn btn-danger">Delete</a></td>
+
+    </tr>
+
+    {% endfor %}
+
+  {% endif %}
+
+    {% endblock %}
+</table>
